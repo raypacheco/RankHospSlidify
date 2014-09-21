@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top Ranked US Hospitals</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Top Ranked US Hospitals">
+  <meta name="author" content="Ray Pacheco">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/prettify/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Top Ranked US Hospitals</h1>
+    <h2>by Selected 30-Day Mortality Rate</h2>
+    <p>Ray Pacheco<br/>September 2014 Developing Data Products</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <!-- Limit image width and height -->
+
+<style type='text/css'>
+img {
+    max-height: 560px;
+    max-width: 964px;
+}
+</style>
+
+<!-- Center image on slide -->
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+
+<script type='text/javascript'>
+$(function() {
+    $("p:has(img)").addClass('centered');
+});
+</script>
+
+<h2>Overview</h2>
+
+<p></br>
+This application uses a Google Visualization Geochart to provide an interactive map displaying the locations and names of the best ranked US Hospitals by state based on 30-day mortality rates of: </p>
+
+<ol>
+<li>Heart attack </li>
+<li>Heart failure </li>
+<li>Pneumonia</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Inspiration</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The application is partially based upon a programming assignment from R Programming, the second course in the Coursera Data Science Specialization.</p>
+
+<p>The function (rankall) returned the nth ranked hospital per state for the three different 30-day mortality rates. This application capitalizes on the data produced for the 1st ranked hospital per state for all three variables.</p>
+
+<p>The original data used can be found at the <a href="https://data.medicare.gov/data/hospital-compare">Medicare Hospital Comparison Website</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Application Detail</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The application uses the <code>googleVis</code> package to render the geomap. </p>
+
+<p>The user is allowed to select one of the three variable rates (heart attack, heart failure, pneumonia) from a dropdown menu.</p>
+
+<p>In order to meet the assignment deadline, the data used was preprocessed into a csv file for each rate. Each file contains the name of the hospital name, address and rate for that particular variable.</p>
+
+<p>The shiny app calls the file to be used based on which variable the user selects.</p>
+
+<p>When the selection is made the geomap is generated with each hospital name pinned at its geographical location.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example Output</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="./assets/img/image1.png" alt="width"></p>
+
+<p><a href="https://raypacheco.shinyapps.io/shinyapp">https://raypacheco.shinyapps.io/shinyapp</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Future Improvements</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>As previously stated the application merely calls one of three files and maps the address and name of the hospital for the 30-day mortality rate selected. Future versions of this application should give users more customization in the data they can select.</p>
+
+<p>Potential expansions examples:</p>
+
+<ol>
+<li>The user can choose to see the nth ranked hospital per state instead of just the best ranked.</li>
+<li>The user can choose to see the top n hospitals for a particular state.</li>
+<li>The user can search for a particular hospital and find its ranking for all three rates.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Inspiration'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Application Detail'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Example Output'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Future Improvements'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- Google Prettify -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+  <script src='libraries/highlighters/prettify/js/lang-r.js'></script>
+  <script>
+    var pres = document.getElementsByTagName("pre");
+    for (var i=0; i < pres.length; ++i) {
+      pres[i].className = "prettyprint linenums";
+    }
+    prettyPrint();
+  </script>
+  <!-- End Google Prettify --> 
+  </html>

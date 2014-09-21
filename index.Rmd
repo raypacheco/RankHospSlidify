@@ -1,0 +1,82 @@
+---
+title       : Top Ranked US Hospitals
+subtitle    : by Selected 30-Day Mortality Rate
+author      : Ray Pacheco
+job         : September 2014 Developing Data Products
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : prettify  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+--- 
+
+<!-- Limit image width and height -->
+<style type='text/css'>
+img {
+    max-height: 560px;
+    max-width: 964px;
+}
+</style>
+
+<!-- Center image on slide -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script type='text/javascript'>
+$(function() {
+    $("p:has(img)").addClass('centered');
+});
+</script>
+
+## Overview
+</br>
+This application uses a Google Visualization Geochart to provide an interactive map displaying the locations and names of the best ranked US Hospitals by state based on 30-day mortality rates of: 
+
+1. Heart attack 
+2. Heart failure 
+3. Pneumonia
+
+
+--- .class #id
+
+## Inspiration
+
+
+The application is partially based upon a programming assignment from R Programming, the second course in the Coursera Data Science Specialization.
+
+The function (rankall) returned the nth ranked hospital per state for the three different 30-day mortality rates. This application capitalizes on the data produced for the 1st ranked hospital per state for all three variables.
+
+The original data used can be found at the [Medicare Hospital Comparison Website](https://data.medicare.gov/data/hospital-compare).
+
+--- .class #id
+
+## Application Detail
+
+The application uses the `googleVis` package to render the geomap. 
+
+The user is allowed to select one of the three variable rates (heart attack, heart failure, pneumonia) from a dropdown menu.
+
+In order to meet the assignment deadline, the data used was preprocessed into a csv file for each rate. Each file contains the name of the hospital name, address and rate for that particular variable.
+
+The shiny app calls the file to be used based on which variable the user selects.
+
+When the selection is made the geomap is generated with each hospital name pinned at its geographical location.
+
+--- .class #id 
+
+## Example Output
+
+![width](./assets/img/image1.png)
+
+https://raypacheco.shinyapps.io/shinyapp
+
+--- .class #id
+
+## Future Improvements
+
+As previously stated the application merely calls one of three files and maps the address and name of the hospital for the 30-day mortality rate selected. Future versions of this application should give users more customization in the data they can select.
+
+Potential expansions examples:
+
+1. The user can choose to see the nth ranked hospital per state instead of just the best ranked.
+2. The user can choose to see the top n hospitals for a particular state.
+3. The user can search for a particular hospital and find its ranking for all three rates.
